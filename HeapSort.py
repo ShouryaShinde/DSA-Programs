@@ -1,11 +1,6 @@
 # Design and implement the Heap Sort algorithm to efficiently sort an array of integers in ascending
 # order. The implementation should be optimized for time and space complexity and should clearly
 # demonstrate the working principles of heap data structures (min-heap or max-heap as applicable)
-class Node :
-  def __init__(self , value) :
-    self.value = value
-    self.left = None
-    self.right = None
 class Heap :
   def __init__(self):
     self.arr = []
