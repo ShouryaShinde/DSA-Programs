@@ -101,19 +101,14 @@ void SDB::AscendingCGPA(void) {
 }
 
 void SDB::DescendingCGPA(void) {
-  Student temp ;
-  for (int i = 0 ; i <= n-2 ; i++) {
-    int maxpos = i ;
-    for (int j = i+1 ; j <= n-1 ; j++) {
-      if (S[j].CGPA > S[maxpos].CGPA) {
-        maxpos = j ;
-      }
+  for(int i = 1 ; i < n ; i++) {
+    Student key = S[i] ;
+    j = i - 1 ;
+    while (j >= 0 && S[j].CGPA < key.CGPA) {
+      S[j+1] = S[j] ;
+      j -= 1 ;
     }
-    if (maxpos != i) {
-      temp = S[i] ;
-      S[i] = S[maxpos] ;
-      S[maxpos] = temp ;
-    }
+    S[j+1] = key ;
   }
 }
 
